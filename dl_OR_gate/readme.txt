@@ -21,6 +21,12 @@ Maintainer
 	LIAN Tongda (lian@sim.gsic.titech.ac.jp)
 	from Tokyo Institute of Technology
 
+Contributing
+
+	Almost everything is in the main function now.
+	If the function of multiplication of matrics is realized, 
+	at least, it will be easier to read.
+
 Acknowledgement
 
 	I would like to give special thanks to Professor Yokota from Tokyo Tech,
