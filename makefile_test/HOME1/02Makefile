@@ -1,0 +1,16 @@
+SHELL = /bin/sh
+OBJS = main.o add.o divide.o minus.o multiply.o order.o
+CFLAG = -Wall -g
+INCLUDE = my_math.h order.h
+CC = gcc
+
+example:${OBJS}
+	${CC}  ${OBJS} ${CFLAG}  -o $@
+
+${OBJS}: %.o : %.c 
+	${CC} -c ${CFLAG} ${INCLUDE} $< -o $@
+.PHONY:clean
+
+clean:
+	rm -f *.o calculate
+

@@ -1,0 +1,34 @@
+SHELL = /bin/sh
+OBJ = main.o \
+add.o divide.o \
+minus.o multiply.o \
+order.o
+
+CC = gcc
+
+
+calculate : ${OBJ}
+	${CC} -o $@ ${OBJ} -lm
+
+main.o : main.c my_math.h
+	${CC} -c main.c
+
+add.o : add.c my_math.h
+	${CC} -c add.c
+
+divide.o : divide.c my_math.h
+	${CC} -c divide.c
+
+minus.o : minus.c my_math.h
+	${CC} -c minus.c
+
+multiply.o: multiply.c my_math.h
+	${CC} -c multiply.c
+
+order.o : order.c my_math.h order.h
+	${CC} -c order.c
+
+.PHONY: clean
+
+clean:
+	rm -f  main.o add.o divide.o minus.o multiply.o order.o calculate

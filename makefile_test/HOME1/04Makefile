@@ -1,0 +1,25 @@
+SHELL = /bin/sh
+TAR = calculate
+OBJ = main.o \
+      add.o divide.o \
+      minus.o multiply.o \
+      order.o
+CFLAG = -Wall -g
+INCLUDE = my_math.h order.h
+CC = gcc
+
+${TAR} : ${OBJ}
+	@echo "Linking ..."
+	@${CC} ${OBJ} ${CFLAG} -o $@  -lm
+	@echo "Finished compiling."
+
+${OBJ}: %.o : %.c
+	@echo "Compiling $< ..."
+	@${CC} -c ${CFLAG} ${INCLUDE} $< 
+	
+.PHONY : clean
+
+clean:
+	@echo "Removing target and object files."
+	@rm -f ${OBJ} ${TAR}
+	

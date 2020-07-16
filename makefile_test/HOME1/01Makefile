@@ -1,0 +1,29 @@
+calculate: main.o add.o \
+	divide.o minus.o \
+       	multiply.o order.o 
+	gcc main.o add.o \
+	divide.o minus.o \
+	multiply.o order.o \
+	-o calculate -lm
+
+main.o : main.c my_math.h
+	gcc -c main.c
+
+add.o : add.c my_math.h
+	gcc -c add.c
+
+divide.o : divide.c my_math.h
+	gcc -c divide.c
+
+minus.o : minus.c my_math.h
+	gcc -c minus.c
+
+multiply.o: multiply.c my_math.h
+	gcc -c multiply.c
+
+order.o : order.c order.h my_math.h
+
+clean:
+	rm -f calculate main.o \
+	add.o divide.o minus.o \
+	multiply.o order.o
