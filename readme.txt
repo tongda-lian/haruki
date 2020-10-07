@@ -21,3 +21,5 @@ makefile_test:
 	Compile multiple source and head files at the same time.
 	HOME2 considers the situation that
 	source files and head files are placed in different directories.
+
+2020/10/05: Test git of tsubame 3.0 
